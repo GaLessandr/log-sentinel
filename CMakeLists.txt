@@ -1,26 +1,16 @@
- project(log_sentinel
-        VERSION 0.1.0
-        LANGUAGES CXX
-    )
+cmake_minimum_required(VERSION 3.16)
+project(log_sentinel VERSION 0.1.0 LANGUAGES CXX)
 
-    # Definizione eseguibile e sorgenti
-    add_executable(log_sentinel
-        src/main.cpp
-        src/log_parser.cpp
-        src/analyzer.cpp
-    )
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-    # Standard C++17 vincolato al target
-    target_compile_features(log_sentinel PRIVATE cxx_std_17)
+add_compile_options(-Wall -Wextra -Wpedantic)
 
-    # Directory include privata per questo target
-    target_include_directories(log_sentinel PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-    )
+include_directories(include)
 
-    # Warning di compilazione confinati solo al target log_sentinel
-    target_compile_options(log_sentinel PRIVATE
-        -Wall
-        -Wextra
-        -Wpedantic
-    )
+add_executable(log_sentinel
+    src/main.cpp
+    src/log_parser.cpp
+    src/analyzer.cpp
+)

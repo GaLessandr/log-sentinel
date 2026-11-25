@@ -1,0 +1,1 @@
+/usr/sbin/c++ -Wl,--dependency-file=CMakeFiles/log_sentinel.dir/link.d CMakeFiles/log_sentinel.dir/src/main.cpp.o CMakeFiles/log_sentinel.dir/src/log_parser.cpp.o CMakeFiles/log_sentinel.dir/src/analyzer.cpp.o -o log_sentinel
